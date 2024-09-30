@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: Laravel Swagger Api Documentation
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8000/api
+tags:
+  - name: Common
+  - name: Post
+paths:
+  /health:
+    get:
+      tags:
+        - Common
+      summary: health
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /posts:
+    get:
+      tags:
+        - Post
+      summary: post list
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - Post
+      summary: create post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                title: what is node
+                body: node is something that do everything
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /posts/1:
+    get:
+      tags:
+        - Post
+      summary: find post
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /posts/2:
+    put:
+      tags:
+        - Post
+      summary: Update Post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example: |-
+                {
+                    "title": "what is node",
+                    "body": "Node is background Engin"
+                    "status": "pulished"
+                }
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /posts/4:
+    delete:
+      tags:
+        - Post
+      summary: delete post
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
